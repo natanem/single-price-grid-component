@@ -40,18 +40,18 @@ p {
     color: #fff;
 }
 
-body>div {
-    width: 90rem;
+body > div {
+    width: 100%;
     height: 50rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-div>section {
+div > section {
     width: 39.62rem;
     display: grid;
-
+    background: green;
     grid-template-columns: repeat(2, 19.81rem);
     grid-template-rows: 13.56rem 16.13rem;
 
@@ -61,11 +61,12 @@ div>section {
     overflow: hidden;
 }
 
-section>* {
+section > * {
     width: 100%;
 }
 
-section article {
+section article { 
+
     padding: 2.5rem;
 }
 
@@ -75,11 +76,11 @@ article.join {
 }
 
 article.join h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 article.join h2 {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     color: var(--bright-yellow);
 }
 
@@ -97,9 +98,12 @@ article.subscription h2 {
     margin-bottom: 2rem;
     color: #fff;
 }
-
+article.subscription p:not(.price){
+    width: 100%;
+    font-size: .96rem;
+}
 article.subscription p.price {
-    border: 1px solid red;
+    
 }
 
 article.subscription .price em {
@@ -116,14 +120,16 @@ article.subscription .price sup {
 }
 
 article.subscription .btn {
+    display: block;
     border: none;
     background: var(--bright-yellow);
     color: #fff;
     width: 100%;
     margin-top: 2rem;
-    padding: 1.25rem 2rem .75rem;
+    padding: 1rem 2rem .75rem;
     font-size: 1rem;
     font-weight: 700;
+    border-radius: 5px;
 }
 
 
@@ -133,4 +139,56 @@ article.subscription {}
 
 article.why-us {
     background: #4BBFBD;
+}
+article.why-us h2{
+    color: #fff;
+    margin-bottom: 1.56rem;
+}
+article.why-us p{
+
+}
+
+@media screen and (max-width: 600px){
+    div > section {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        background: green;
+        grid-template-columns:1fr;
+        grid-template-rows: repeat(3, 1fr);
+        background: #fff;
+        border-radius: .5rem;
+        box-shadow: 0 15px 30px rgba(0, 81, 171, .15);
+        overflow: hidden;
+    }
+    article.join {
+        height: 16.7rem;
+        padding: 2.25rem 1.5rem;
+    }
+    article.join h1 {
+        margin-bottom: 1.25rem;
+    }
+    
+    article.join h2 {
+        font-size: 0.9375rem;
+        margin-bottom: .5rem;
+        color: var(--bright-yellow);
+    }
+    
+    article.join p {
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+        line-height: 26px;
+        color: var(--cyan);
+    }
+    article.subscription{
+        width: 100%;
+        height: 1000px
+        padding: 2rem;
+    }
+    article.subscription h2 {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+        color: #fff;
+    }
 }
